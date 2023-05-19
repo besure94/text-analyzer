@@ -72,7 +72,7 @@ Describe: offensiveWords()
 
 Test: "It should omit four offensive words from a text passage."
 Code:
-const passage = "The four men split up and walked off in different directions.";
-const offensiveTerms = "zoinks muppeteer biffaroni and loopdaloop";
+const passage = "zoinks muppeteer biffaroni loopdaloop The four men split up and walked off in different directions.";
+const offensiveTerms = "zoinks muppeteer biffaroni loopdaloop";
 omitOffensiveTerms (passage, offensiveTerms);
 Expected Output: 4
