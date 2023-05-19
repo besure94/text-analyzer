@@ -40,14 +40,14 @@ function numberOfOccurrencesInText(word, text) {
 // const offensiveTerms = "zoinks muppeteer biffaroni loopdaloop";
 // console.log("New passage: ", omitOffensiveTerms(passage, offensiveTerms));
 
-function handleFormSubmission() {
+function handleFormSubmission(event) {
 	event.preventDefault();
 	const passage = document.getElementById("text-passage").value;
 	const word = document.getElementById("word").value;
 	const wordCount = wordCounter(passage);
 	const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
 	document.getElementById("total-count").innerText = wordCount;
-	document.getElementById("selected-account").innerText = occurrencesOfWord;
+	document.getElementById("selected-count").innerText = occurrencesOfWord;
 }
 
 window.addEventListener("load", function() {
