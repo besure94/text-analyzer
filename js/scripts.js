@@ -31,3 +31,18 @@ function numberOfOccurrencesInText(word, text) {
 const text = "red blue red red red green";
 const word = "red";
 console.log("Occurrence count: ", numberOfOccurrencesInText(word, text));
+
+function omitOffensiveTerms(passage, offensiveTerms) {
+	const passageArray = passage.split(" ");
+	let newPassage = "The four men split up and walked off in different directions.";
+	passageArray.forEach(function(element) {
+		if (element.trim()) {
+			newPassage;
+		}
+	});
+	return newPassage;
+}
+
+const passage = "zoinks muppeteer biffaroni loopdaloop The four men split up and walked off in different directions.";
+const offensiveTerms = "zoinks muppeteer biffaroni loopdaloop";
+console.log("New passage: ", omitOffensiveTerms(passage, offensiveTerms));
