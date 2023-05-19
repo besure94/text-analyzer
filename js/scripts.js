@@ -1,9 +1,9 @@
-function wordCounter(text) {
-	if (text.trim().length === 0) {
+function wordCounter(inputText) {
+	if (inputText.trim().length === 0) {
 		return 0;
 	}
 	let wordCount = 0;
-	const textArray = text.split(" ");
+	const textArray = inputText.split(" ");
 	textArray.forEach(function(element) {
 		if(!Number(element)) {
 			wordCount++;
@@ -12,13 +12,22 @@ function wordCounter(text) {
 	return wordCount;
 }
 
+const text2 = "hello there";
+wordCounter("");
+// console.log(wordCounter("hi there 77 19"));
+// console.log("Word count: ", wordCounter(text2));
+
 function numberOfOccurrencesInText(word, text) {
-	if (word === text) {
-		return 1;
-	}
-	return 0;
+	const textArray = text.split(" ");
+	let wordCount = 0;
+	textArray.forEach(function(element) {
+		if (element.toLowerCase().includes(word.toLowerCase())) {
+			wordCount++
+		}
+	});
+	return wordCount;
 }
 
-const text = "red";
+const text = "red blue red red red green";
 const word = "red";
-numberOfOccurrencesInText(word, text);
+console.log("Occurrence count: ", numberOfOccurrencesInText(word, text));
