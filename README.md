@@ -67,3 +67,12 @@ const text = "Red! Red. I like red, green, and yellow.";
 const word = "Red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 3
+
+Describe: offensiveWords()
+
+Test: "It should omit four offensive words from a text passage."
+Code:
+const passage = "The four men split up and walked off in different directions.";
+const offensiveTerms = "zoinks muppeteer biffaroni and loopdaloop";
+omitOffensiveTerms (passage, offensiveTerms);
+Expected Output: 4
