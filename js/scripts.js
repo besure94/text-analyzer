@@ -12,5 +12,13 @@ function wordCounter(text) {
 	return wordCount;
 }
 
-const text = "hello there";
-console.log(wordCounter(text));
+function numberOfOccurrencesInText(word, text) {
+	if (word === text) {
+		return 1;
+	}
+	return 0;
+}
+
+const text = "red";
+const word = "red";
+numberOfOccurrencesInText(word, text);
