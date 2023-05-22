@@ -13,6 +13,9 @@ function wordCounter(inputText) {
 }
 
 function numberOfOccurrencesInText(word, text) {
+	if (word.trim().length === 0) {
+		return 0;
+	}
 	const textArray = text.split(" ");
 	let wordCount = 0;
 	textArray.forEach(function(element) {
@@ -21,6 +24,12 @@ function numberOfOccurrencesInText(word, text) {
 		}
 	});
 	return wordCount;
+}
+
+function boldPassage(word, text) {
+	if ((text.trim().length === 0) || (word.trim().length === 0)) {
+		return null;
+	}
 }
 
 // Practice function for omitting words from passage//
