@@ -68,6 +68,12 @@ const word = "Red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 3
 
+Test: "If an empty string is passed in as a word, it should return 0."
+Code:
+const word = "";
+const text = "red RED red!";
+numberOfOccurrencesInText(word, text);
+Expected Output: 0
 Describe: offensiveWords()
 
 Test: "It should omit four offensive words from a text passage."
@@ -76,13 +82,6 @@ const passage = "zoinks muppeteer biffaroni loopdaloop The four men split up and
 const offensiveTerms = "zoinks muppeteer biffaroni loopdaloop";
 omitOffensiveTerms (passage, offensiveTerms);
 Expected Output: 4
-
-Test: "If an empty string is passed in as a word, it should return 0."
-Code:
-const word = "";
-const text = "red RED red!";
-numberOfOccurrencesInText(word, text);
-Expected Output: 0
 
 Describe: boldPassage()
 
