@@ -31,15 +31,19 @@ function boldPassage(word, text) {
 		return null;
 	}
 	const p = document.createElement("p");
-	if (word === text) {
-		const bold = document.createElement("strong");
-		bold.append(text);
-		p.append(bold);
-	} else {
-		p.append(text);
+	let textArray = text.split(" ");
+	textArray.forEach(function(element) {
+		if (word === element) {
+				const bold = document.createElement("strong");
+				bold.append(element);
+				p.append(bold);
+			} else {
+				p.append(element);
+			}
+			p.append(" ");
+		});
+		return p;
 	}
-	return p;
-}
 
 // Practice function for omitting words from passage//
 
