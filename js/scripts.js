@@ -1,5 +1,9 @@
+function isEmpty(testString) {
+	return (testString.trim().length === 0);
+}
+
 function wordCounter(inputText) {
-	if (inputText.trim().length === 0) {
+	if (isEmpty(text)) {
 		return 0;
 	}
 	let wordCount = 0;
@@ -13,7 +17,7 @@ function wordCounter(inputText) {
 }
 
 function numberOfOccurrencesInText(word, text) {
-	if (word.trim().length === 0) {
+	if (isEmpty(word)) {
 		return 0;
 	}
 	const textArray = text.split(" ");
@@ -27,12 +31,12 @@ function numberOfOccurrencesInText(word, text) {
 }
 
 function boldPassage(word, text) {
-	if ((text.trim().length === 0) || (word.trim().length === 0)) {
+	if (isEmpty(word) || isEmpty(text)) {
 		return null;
 	}
 	const p = document.createElement("p");
 	let textArray = text.split(" ");
-	textArray.forEach(function(element) {
+	textArray.forEach(function(element, index) {
 		if (word === element) {
 				const bold = document.createElement("strong");
 				bold.append(element);
@@ -40,7 +44,9 @@ function boldPassage(word, text) {
 			} else {
 				p.append(element);
 			}
+			if (index !== (textArray.length - 1)) {
 			p.append(" ");
+			}
 		});
 		return p;
 	}
@@ -70,6 +76,12 @@ function handleFormSubmission(event) {
 	const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
 	document.getElementById("total-count").innerText = wordCount;
 	document.getElementById("selected-count").innerText = occurrencesOfWord;
+	let boldedPassage = boldPassage(word, passage);
+	if (boldedPassage) {
+		document.querySelector("div#bolded-passage").append(boldedPassage);
+	} else {
+		document.querySelector("div#bolded-passage").innerText = null;
+	}
 }
 
 window.addEventListener("load", function() {
