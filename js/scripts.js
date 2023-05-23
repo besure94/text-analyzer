@@ -2,12 +2,16 @@ function isEmpty(testString) {
 	return (testString.trim().length === 0);
 }
 
+// function takes string as argument //
 function wordCounter(text) {
+	// if string is empty, return 0 //
 	if (isEmpty(text)) {
 		return 0;
 	}
 	let wordCount = 0;
+	// split array into unique word //
 	const textArray = text.split(" ");
+	// loop through textArray ?//
 	textArray.forEach(function(element) {
 		if(!Number(element)) {
 			wordCount++;
@@ -16,6 +20,7 @@ function wordCounter(text) {
 	return wordCount;
 }
 
+// function takes string //
 function numberOfOccurrencesInText(word, text) {
 	if (isEmpty(word)) {
 		return 0;
