@@ -54,6 +54,7 @@ function boldPassage(word, text) {
 	//step 1: write a function that returns how many times each word is used in a passage of text.
 	//step 2: organize the output of words from most used to least used.
 
+// this function takes a string as an argument //
 function mostUsedWords(text) {
 	let textArray = text.toUpperCase().split(" ").sort();
 	let wordArray = [];
@@ -104,10 +105,20 @@ function mostUsedWords(text) {
 	return result;
 }
 
+function addListToDOM(listItemArray) {
+	const ul = document.querySelector("ul");
+	listItemArray.forEach(function(element) {
+		const li = document.createElement("li");
+		li.append(element);
+		ul.append(li);
+	});
+}
+
 function handleFormSubmission(event) {
 	event.preventDefault();
 	const passage = document.getElementById("text-passage").value;
 	const usedWords = mostUsedWords(passage);
+	addListToDOM(usedWords);
 	const word = document.getElementById("word").value;
 	const wordCount = wordCounter(passage);
 	const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
