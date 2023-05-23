@@ -76,13 +76,6 @@ numberOfOccurrencesInText(word, text);
 Expected Output: 0
 Describe: offensiveWords()
 
-Test: "It should omit four offensive words from a text passage."
-Code:
-const passage = "zoinks muppeteer biffaroni loopdaloop The four men split up and walked off in different directions.";
-const offensiveTerms = "zoinks muppeteer biffaroni loopdaloop";
-omitOffensiveTerms (passage, offensiveTerms);
-Expected Output: 4
-
 Describe: boldPassage()
 
 Test: "It should return null if no word or text is entered."
@@ -112,3 +105,12 @@ const word = "hello";
 const text = "hello there";
 boldPassage(word, text);
 Expected Output: <p><strong>hello</strong> there</p>
+
+Describe: mostUsedWords()
+
+Test: "It should return how many times each word is used, and organize them from most used to least used."
+Code:
+const passage = "hey hey hey there there hello hello whoa whoa";
+const usedWords = mostUsedWords(passage);
+Result:
+usedWords = ['Hey: 3', 'there: 2', 'hello: 2', 'whoa: 2']
