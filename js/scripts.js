@@ -1,5 +1,10 @@
-function isEmpty(testString) {
-	return (testString.trim().length === 0);
+function isEmpty() {
+	for (let i = 0; i < arguments.length; i++) {
+		if (arguments[i].trim().length === 0) {
+			return true;
+		}
+	}
+	return false;
 }
 
 // function takes string as argument //
@@ -36,7 +41,7 @@ function numberOfOccurrencesInText(word, text) {
 }
 
 function boldPassage(word, text) {
-	if (isEmpty(word) || isEmpty(text)) {
+	if (isEmpty(word, text)) {
 		return null;
 	}
 	const p = document.createElement("p");
